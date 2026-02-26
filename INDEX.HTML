@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant Accounting Dashboard</title>
+    <link rel="stylesheet" href="/STYLE.CSS">
+</head>
+<body>
+
+<!-- LOGIN PAGE -->
+<div id="loginPage" class="container card">
+    <h2>Restaurant Login</h2>
+
+    <input type="email" id="loginEmail" placeholder="Enter Email"><br>
+    <input type="password" id="loginPassword" placeholder="Enter Password"><br>
+
+    <button onclick="login()">Sign In</button>
+    <button onclick="googleLogin()">Continue with Google</button>
+
+    <p class="link" onclick="showSignup()">Sign Up</p>
+    <p class="link" onclick="forgotPassword()">Forgot Password?</p>
+
+    <p id="loginMsg"></p>
+</div>
+
+<!-- SIGNUP -->
+<div id="signupPage"  class="container card" style="display:none;">
+    <h2>Create Account</h2>
+
+    <input type="email" id="signupEmail" placeholder="Enter Email"><br>
+    <input type="password" id="signupPassword" placeholder="Create Password"><br>
+
+    <button onclick="signup()">Register</button>
+    <p class="link" onclick="showLogin()">Back to Login</p>
+    <p id="signupMsg"></p>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="container" style="display:none;">
+
+    <h2 class="title">Restaurant Accounting Dashboard</h2>
+
+    <!-- SALES -->
+    <div class="card">
+        <h3>Sales</h3>
+        <input type="date" id="saleDate">
+        <input type="number" id="saleAmount" placeholder="Amount">
+        <select id="saleType">
+            <option>Dine-In</option>
+            <option>Takeaway</option>
+            <option>Online</option>
+        </select>
+        <button onclick="addSale()">Add Sale</button>
+
+        <table id="salesTable">
+            <tr>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>Type</th>
+                <th>Action</th>
+            </tr>
+        </table>
+    </div>
+
+    <!-- EXPENSE -->
+    <div class="card">
+        <h3>Expenses</h3>
+        <input type="date" id="expenseDate">
+        <input type="number" id="expenseAmount" placeholder="Amount">
+        <select id="expenseType">
+            <option>Raw Material</option>
+            <option>Salary</option>
+            <option>Rent</option>
+            <option>Misc</option>
+        </select>
+        <button onclick="addExpense()">Add Expense</button>
+
+        <table id="expenseTable">
+            <tr>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>Type</th>
+                <th>Action</th>
+            </tr>
+        </table>
+    </div>
+
+    <!-- GST -->
+    <div class="card">
+        <h3>GST Section</h3>
+        <input type="number" id="gstCollected" placeholder="GST Collected">
+        <input type="number" id="gstPaid" placeholder="GST Paid">
+        <button onclick="calculateGST()">Calculate</button>
+        <p id="gstResult"></p>
+    </div>
+
+    <!-- SUPPLIER -->
+    <div class="card">
+        <h3>Supplier Management</h3>
+        <input type="text" id="supplierName" placeholder="Supplier Name">
+        <input type="number" id="supplierPayment" placeholder="Outstanding Payment">
+        <input type="date" id="supplierDue">
+        <button onclick="addSupplier()">Add Supplier</button>
+
+        <table id="supplierTable">
+            <tr>
+                <th>Name</th>
+                <th>Outstanding</th>
+                <th>Due Date</th>
+                <th>Action</th>
+            </tr>
+        </table>
+    </div>
+
+    <!-- PAYROLL -->
+    <div class="card">
+        <h3>Staff Payroll</h3>
+        <input type="text" id="empName" placeholder="Employee Name">
+        <input type="number" id="empSalary" placeholder="Salary">
+        <input type="number" id="empBonus" placeholder="Bonus/Overtime">
+        <button onclick="addEmployee()">Add Employee</button>
+
+        <table id="payrollTable">
+            <tr>
+                <th>Name</th>
+                <th>Salary</th>
+                <th>Bonus</th>
+                <th>Action</th>
+            </tr>
+        </table>
+    </div>
+
+    <!-- AI ASSISTANT -->
+    <div class="card">
+        <h3>AI Business Analysis</h3>
+        <button onclick="showAI()">Generate Analysis</button>
+        <p id="aiResult"></p>
+    </div>
+
+</div>
+
+<script src="/SCRIPT.JS"></script>
+</body>
+</html>
